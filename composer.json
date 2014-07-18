@@ -1,0 +1,14 @@
+{
+	"name": "greeny/api",
+	"description": "An API for making requests.",
+	"require": {
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"nette/tester": "v1.2.0",
+		"tracy/tracy": "v2.2.2"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	}
+}
