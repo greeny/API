@@ -43,7 +43,10 @@ class FileDriver implements IDriver
 	{
 		$context = $this->context;
 		$context['http']['method'] = $request->getMethod();
-		$context['http']['headers'] = $request->getHeaders();
+		$headers = $request->getHeaders();
+		foreach($headers as $key => $value) {
+			$context['http']['header'][] = "$key: $value";
+		}
 		if(count($request->getParameters())) {
 			if($request->getMethod() !== Request::METHOD_GET) {
 				$context['http']['header'][] = 'Content-type: application/x-www-form-urlencoded';
